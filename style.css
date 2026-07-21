@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "inter", sans-serif;
+  background: #fff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+.navbar {
+  background: white;
+}
+
+.logo {
+  font-size: 42px;
+  font-weight: 900;
+  color: #111;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #0d6efd;
+}
+
+.nav-link {
+  margin-left: 30px;
+  color: #111;
+  font-weight: 500;
+}
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hello {
+  font-size: 22px;
+  color: #555;
+}
+
+.title {
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.outline {
+  font-size: 100px;
+  line-height: 0.9;
+
+  color: white;
+
+  -webkit-text-stroke: 2px #111;
+}
+
+.desc {
+  width: 75%;
+  color: #666;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.profile {
+  max-width: 430px;
+  filter: grayscale(100%);
+}
+
+.btn {
+  border-radius: 50px;
+  padding: 15px 35px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 992px) {
+  .title {
+    font-size: 70px;
+  }
+
+  .outline {
+    font-size: 70px;
+  }
+
+  .desc {
+    width: 100%;
+  }
+
+  .profile {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 44px;
+  }
+
+  .outline {
+    font-size: 52px;
+  }
+
+  .logo {
+    font-size: 32px;
+  }
+}
+
+.about-section {
+  background: #f8f9fc;
+  padding: 100px 0;
+}
+
+.section-tag {
+  color: #6c63ff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.about-img {
+  max-width: 350px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.about-img:hover {
+  transform: translateY(-8px);
+}
+
+.about-text {
+  color: #555;
+  font-size: 17px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.stat-box:hover {
+  transform: translateY(-8px);
+}
+
+.stat-box h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.stat-box span {
+  color: #777;
+  font-size: 14px;
+}
+
+.skills-section {
+  background: white;
+  padding: 70px 0;
+  overflow: hidden;
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: 30px 0;
+  min-height: 80px;
+}
+
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 100px;
+}
+
+.marquee-content i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  color: white;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.marquee-content i:hover {
+  transform: scale(1.2);
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* .left { */
+/* animation: leftMove 60s linear infinite; */
+/* } */
+
+/* .right { */
+/* animation: rightMove 60s linear infinite; */
+/* } */
+
+@keyframes leftMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rightMove {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+animation-play-state: paused;
+
+/* Top Row */
+
+.left {
+  animation: leftMove 60s linear infinite;
+}
+
+/* Bottom Row */
+
+.right {
+  animation: rightMove 60s linear infinite;
+}
+
+/* Animations */
+
+@keyframes leftMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rightMove {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
