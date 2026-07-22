@@ -243,7 +243,7 @@ body{
 }
 
 .left{
-    animation:leftMove 18s linear infinite;
+    animation:leftMove 20s linear infinite;
 }
 
 .right{
