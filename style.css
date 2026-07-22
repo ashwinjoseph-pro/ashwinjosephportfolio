@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "inter", sans-serif;
+  font-family: "Inter", sans-serif;
   background: #fff;
   color: #111;
   overflow-x: hidden;
@@ -52,9 +52,7 @@ body {
 .outline {
   font-size: 100px;
   line-height: 0.9;
-
   color: white;
-
   -webkit-text-stroke: 2px #111;
 }
 
@@ -112,6 +110,7 @@ body {
   }
 }
 
+/* About Section */
 .about-section {
   background: #f8f9fc;
   padding: 100px 0;
@@ -166,6 +165,7 @@ body {
   font-size: 14px;
 }
 
+/* Skills Section & Marquee */
 .skills-section {
   background: white;
   padding: 70px 0;
@@ -204,87 +204,49 @@ body {
   display: flex;
   align-items: center;
   width: max-content;
-  gap: 100px;
+  gap: 150px;
 }
 
 .marquee-content i {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  font-size: 40px;
-  color: white;
+  font-size: 45px;
   transition: 0.25s;
   cursor: pointer;
+  /* Removed color: white so devicon brand colors work */
 }
 
 .marquee-content i:hover {
-  transform: scale(1.2);
+  transform: scale(1.25);
 }
 
 .marquee:hover .marquee-content {
   animation-play-state: paused;
 }
 
-/* .left { */
-/* animation: leftMove 60s linear infinite; */
-/* } */
-
-/* .right { */
-/* animation: rightMove 60s linear infinite; */
-/* } */
-
-@keyframes leftMove {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes rightMove {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-animation-play-state: paused;
-
-/* Top Row */
-
 .left {
-  animation: leftMove 60s linear infinite;
+  animation: leftMove 35s linear infinite;
 }
-
-/* Bottom Row */
 
 .right {
-  animation: rightMove 60s linear infinite;
+  animation: rightMove 35s linear infinite;
 }
 
-/* Animations */
-
 @keyframes leftMove {
-  from {
+  0% {
     transform: translateX(0);
   }
-
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
 
 @keyframes rightMove {
-  from {
+  0% {
     transform: translateX(-50%);
   }
-
-  to {
+  100% {
     transform: translateX(0);
   }
 }
