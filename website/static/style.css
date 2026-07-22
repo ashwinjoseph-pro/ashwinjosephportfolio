@@ -274,13 +274,13 @@ body{
 /* Top Row */
 
 .left{
-    animation:leftMove 12s linear infinite;
+    animation:leftMove 20s linear infinite;
 }
 
 /* Bottom Row */
 
 .right{
-    animation:rightMove 15s linear infinite;
+    animation:rightMove 20s linear infinite;
 }
 
 /* Animations */
