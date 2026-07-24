@@ -2,17 +2,17 @@ const config = {
   SIM_RESOLUTION: 128,
   DYE_RESOLUTION: 1440,
   CAPTURE_RESOLUTION: 512,
-  DENSITY_DISSIPATION: 3.5,
-  VELOCITY_DISSIPATION: 2,
-  PRESSURE: 0.1,
+  DENSITY_DISSIPATION: 1.0,
+  VELOCITY_DISSIPATION: 0.98,
+  PRESSURE: 0.8,
   PRESSURE_ITERATIONS: 20,
-  CURL: 3,
-  SPLAT_RADIUS: 0.2,
+  CURL: 30,
+  SPLAT_RADIUS: 0.25,
   SPLAT_FORCE: 6000,
   SHADING: true,
   COLOR_UPDATE_SPEED: 10,
   PAUSED: false,
-  BACK_COLOR: { r: 0.5, g: 0, b: 0 },
+  BACK_COLOR: { r: 0, g: 0, b: 0 },
   TRANSPARENT: true,
 };
 
@@ -799,7 +799,11 @@ function HSVtoRGB(h, s, v) {
 }
 
 function generateColor() {
-  return { r: 0.01, g: 0.01, b: 0.01 };
+  let c = HSVtoRGB(Math.random(), 1.0, 1.0);
+  c.r *= 0.15;
+  c.g *= 0.15;
+  c.b *= 0.15;
+  return c;
 }
 
 function wrap(value, min, max) {
@@ -1055,6 +1059,20 @@ function splatPointer(pointer) {
   splat(pointer.texcoordX, pointer.texcoordY, dx, dy, pointer.color);
 }
 
+function multipleSplats(amount) {
+  for (let i = 0; i < amount; i++) {
+    const color = generateColor();
+    color.r *= 10;
+    color.g *= 10;
+    color.b *= 10;
+    const x = Math.random();
+    const y = Math.random();
+    const dx = 1000 * (Math.random() - 0.5);
+    const dy = 1000 * (Math.random() - 0.5);
+    splat(x, y, dx, dy, color);
+  }
+}
+
 function clickSplat(pointer) {
   const color = generateColor();
   color.r *= 10;
@@ -1222,6 +1240,7 @@ function init() {
     updateKeywords();
     initFramebuffers();
     setupEventListeners();
+    multipleSplats(5);
     updateFrame();
   } catch (error) {
     console.error("Failed to initialize fluid simulation:", error);
