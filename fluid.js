@@ -1059,18 +1059,18 @@ function splatPointer(pointer) {
   splat(pointer.texcoordX, pointer.texcoordY, dx, dy, pointer.color);
 }
 
-function multipleSplats(amount) {
-  for (let i = 0; i < amount; i++) {
-    const color = generateColor();
-    color.r *= 10;
-    color.g *= 10;
-    color.b *= 10;
-    const x = Math.random();
-    const y = Math.random();
-    const dx = 1000 * (Math.random() - 0.5);
-    const dy = 1000 * (Math.random() - 0.5);
-    splat(x, y, dx, dy, color);
-  }
+// function multipleSplats(amount) {
+//   for (let i = 0; i < amount; i++) {
+//     const color = generateColor();
+//     color.r *= 10;
+//     color.g *= 10;
+//     color.b *= 10;
+//     const x = Math.random();
+//     const y = Math.random();
+//     const dx = 1000 * (Math.random() - 0.5);
+//     const dy = 1000 * (Math.random() - 0.5);
+//     splat(x, y, dx, dy, color);
+//   }
 }
 
 function clickSplat(pointer) {
