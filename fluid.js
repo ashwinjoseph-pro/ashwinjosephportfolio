@@ -799,7 +799,11 @@ function HSVtoRGB(h, s, v) {
 }
 
 function generateColor() {
-  return { r: 0.01, g: 0.01, b: 0.01 };
+  const c = HSVtoRGB(Math.random(), 1.0, 1.0);
+  c.r *= 0.15;
+  c.g *= 0.15;
+  c.b *= 0.15;
+  return c;
 }
 
 function wrap(value, min, max) {
